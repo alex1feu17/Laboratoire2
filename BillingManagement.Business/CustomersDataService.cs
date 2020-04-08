@@ -11,14 +11,14 @@ namespace BillingManagement.Business
         {
             customers = new List<Customer>()
             {
-                new Customer() {Name="Ayanna", LastName="Vargas",Address="401-3122 Nullam Ave", City="Pickering",Province="ON", PostalCode="N6C 7M5", PicturePath="/images/user.png", ContactInfo="Work : 624-767-4994"},
+                new Customer() {Name="Ayanna", LastName="Vargas",Address="401-3122 Nullam ve", City="Pickering",Province="ON", PostalCode="N6C 7M5", PicturePath="/images/user.png", ContactInfo="Work : 624-767-4994"},
                 new Customer() {Name="Whitney", LastName="Parks",Address="563-3207 Mi Rd.", City="Greater Sudbury",Province="ON", PostalCode="N9G 5V1", PicturePath="/images/user.png", ContactInfo="Cell : 175-370-4839"},
                 new Customer() {Name="Louis", LastName="Watts",Address="P.O. Box 529, 6291 Aliquam Road", City="Fredericton",Province="NB", PostalCode="E2T 4M4", PicturePath="/images/user.png", ContactInfo="Cell : 734-499-0531"},
                 new Customer() {Name="Pamela", LastName="Knapp",Address="2425 Urna Road", City="Mission",Province="BC", PostalCode="V6W 1J0", PicturePath="/images/user.png", ContactInfo="Home : 510-433-5623"},
                 new Customer() {Name="Clinton", LastName="Gallagher",Address="Ap #150-7450 Sapien Rd.", City="Scarborough",Province="ON", PostalCode="M5V 7N1", PicturePath="/images/user.png", ContactInfo="Home : 328-524-0475"},
                 new Customer() {Name="Amal", LastName="Cross",Address="P.O. Box 738, 9025 Sed Street", City="Parkland County",Province="AB", PostalCode="T6S 6A4", PicturePath="/images/user.png", ContactInfo="Cell : 250-555-4617"},
                 new Customer() {Name="Vanna", LastName="Hyde",Address="5671 Eros Rd.", City="Daly",Province="MB", PostalCode="R0E 5T0", PicturePath="/images/user.png", ContactInfo="Email : Quisque@neque.net"},
-                new Customer() {Name="Madonna", LastName="Navarro",Address="P.O. Box 647, 5331 Erat, Rd.", City="Prince George",Province="BC", PostalCode="V6Y 0X2", PicturePath="/images/user.png", ContactInfo="Home : 369-993-0222"},
+                new Customer() {Name="Madonna", LastName="Navarro",Address="P.O. Box 647, 5331 Erat, Rd.", City="Princ George",Province="BC", PostalCode="V6Y 0X2", PicturePath="/images/user.png", ContactInfo="Home : 369-993-0222"},
                 new Customer() {Name="Rina", LastName="Decker",Address="138-7714 Orci, St.", City="Hamilton",Province="ON", PostalCode="L7Z 9Z5", PicturePath="/images/user.png", ContactInfo="Work : 140-464-7242"},
                 new Customer() {Name="Dustin", LastName="Cole",Address="531-6134 Ut St.", City="St. Thomas",Province="ON", PostalCode="K1C 9L0", PicturePath="/images/user.png", ContactInfo="Email : eget.dictum@Aliquamvulputate.ca"},
                 new Customer() {Name="Kellie", LastName="Hanson",Address="6655 Integer Avenue", City="Windsor",Province="ON", PostalCode="P5Y 0S4", PicturePath="/images/user.png", ContactInfo="Work : 175-412-9657"},

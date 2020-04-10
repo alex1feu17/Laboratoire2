@@ -7,7 +7,7 @@ namespace BillingManagement.UI.ViewModels
 {
     public class Invoice
     {
-        public int InvoiceId { get; set; }
+        public static int InvoiceId { get; set; }
 
         public DateTime CreationDateTime { get; }
 
@@ -26,5 +26,7 @@ namespace BillingManagement.UI.ViewModels
             CreationDateTime = new DateTime(2020, 4, 8, 1, 37, 0);
             c = Customer;
         }
+
+        
     }
 }

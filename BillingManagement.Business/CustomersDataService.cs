@@ -1,5 +1,9 @@
 ﻿using app_models;
+using VisioForge.Shared.MediaFoundation.OPM;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace BillingManagement.Business
 {
@@ -112,14 +116,37 @@ namespace BillingManagement.Business
                 new Customer() {Name="Castor", LastName="Ward",Address="9689 Sed Rd.", City="Bathurst",Province="NB", PostalCode="E3R 7Z5", PicturePath="/images/user.png", ContactInfo="Cell : 328-524-0475"},
                 new Customer() {Name="Randall", LastName="Griffith",Address="Ap #295-2152 Cras Street", City="Price",Province="QC", PostalCode="J3T 8R1", PicturePath="/images/user.png", ContactInfo="Home : 108-300-4964"},
 
+
             };
-        }
-        public IEnumerable<Customer> GetAll()
-        {
+
+            List<ContactInfo> contactInfos = new ContactInfosDataService().GetAll().ToList();
+
+            Random rnd = new Random();
+
             foreach (Customer c in customers)
             {
-                yield return c;
+                c.ContactInfos = new ObservableCollection<ContactInfo>();
+
+                var nbContacts = rnd.Next(1, 4);
+
+                for (int i = 0; i < nbContacts; i++)
+                {
+                    var index = rnd.Next(contactInfos.Count);
+                    var ci = contactInfos[index];
+                    c.ContactInfos.Add(ci);
+                }
             }
         }
+
+            public IEnumerable<Customer> GetAll()
+            {
+                foreach (Customer c in customers)
+                {
+                    yield return c;
+                }
+            }
+
+
     }
 }
+

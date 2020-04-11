@@ -11,7 +11,7 @@ namespace BillingManagement.UI.ViewModels
 
         public DateTime CreationDateTime { get; }
 
-        Customer Customer { get; set; }
+        public Customer Customer { get; set; }
 
         public double SubTotal { get; set; }
 

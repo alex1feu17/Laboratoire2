@@ -8,8 +8,10 @@ namespace BillingManagement.UI.ViewModels
     public class CustomerViewModel : BaseViewModel
     {
         readonly CustomersDataService customersDataService = new CustomersDataService();
+        readonly ContactInfosDataService contactInfosDataService = new ContactInfosDataService();
 
         private ObservableCollection<Customer> customers;
+        private ObservableCollection<ContactInfo> contacts;
         private Customer selectedCustomer;
 
         public ObservableCollection<Customer> Customers
@@ -18,6 +20,15 @@ namespace BillingManagement.UI.ViewModels
             private set
             {
                 customers = value;
+                OnPropertyChanged();
+            }
+        }
+        public ObservableCollection<ContactInfo> Contacts
+        {
+            get => contacts;
+            private set
+            {
+                contacts = value;
                 OnPropertyChanged();
             }
         }
@@ -40,6 +51,8 @@ namespace BillingManagement.UI.ViewModels
         private void InitValues()
         {
             Customers = new ObservableCollection<Customer>(customersDataService.GetAll());
+            Contacts =new ObservableCollection<ContactInfo>(contactInfosDataService.GetAll());
+
             Debug.WriteLine(Customers.Count);
         }
 

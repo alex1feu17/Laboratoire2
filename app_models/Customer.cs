@@ -93,9 +93,9 @@ namespace app_models
 
         public ObservableCollection<ContactInfo> ContactInfos { get; set; }
 
-        
+        public ObservableCollection<Invoice> Invoice { get; set; }
 
-       
+
 
         public event PropertyChangedEventHandler PropertyChanged;
 

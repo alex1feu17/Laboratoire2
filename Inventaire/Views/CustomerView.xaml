@@ -126,6 +126,9 @@
                 <Image Margin="6" Grid.Row="7"
                        Source="{Binding SelectedCustomer.PicturePath}"
                        Stretch="Uniform"/>
+                <DataGrid Grid.Row="7" Grid.Column="7">
+                    <TextBlock Text="{Binding Contacts}"/>
+                </DataGrid>
             </Grid>
         </Grid>        
     </DockPanel>

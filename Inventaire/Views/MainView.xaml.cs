@@ -44,5 +44,15 @@ namespace Inventaire
         {
             App.Current.Shutdown();
         }
+
+        private void CustomerView_Clicked(object sender, RoutedEventArgs e)
+        {
+            DataContext = new CustomerViewModel();
+        }
+
+        private void InvoiceView_Clicked(object sender, RoutedEventArgs e)
+        {
+            DataContext = new InvoicesViewModel();
+        }
     }
 }

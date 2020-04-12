@@ -4,10 +4,20 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Inventaire"
+        xmlns:viewmodels="clr-namespace:BillingManagement.UI.ViewModels"
+        xmlns:views="clr-namespace:BillingManagement.UI.Views"
         mc:Ignorable="d"
-        Title="Gestion de clients" Width="800" Height="500"
+        Title="Gestion de clients" Width="800" Height="500"     
         MinHeight="600" MinWidth="640"
         DataContext="{Binding RelativeSource={RelativeSource self}}">
+    <Window.Resources>
+        <DataTemplate x:Name="CustomerViewTemplate" DataType="{x:Type Vie:CustomerViewModel}">
+            <views:UserControlCustomerView DataContext="{Binding}"/>
+        </DataTemplate>
+        <DataTemplate x:Name="InvoiceViewTemplate" DataType="{x:Type viewmodels:InvoiceViewModel}">
+            <views:UserControlInvoiceView DataContext="{Binding}"/>
+        </DataTemplate>
+    </Window.Resources>
     <DockPanel>
         <StackPanel DockPanel.Dock="Top">
             <Menu>
@@ -45,6 +55,19 @@
             <TextBlock Text="Client sélectionné : " />
             <TextBlock Text="{Binding SelectedCustomer.Info}" />
         </StatusBar>
+        
+        <ContentPresenter Name="Customer" VerticalAlignment="Bottom">
+            <ContentPresenter.Content>
+                <Button Click="CustomerView_Clicked">Customer</Button>
+            </ContentPresenter.Content>
+        </ContentPresenter>
+        
+        <ContentPresenter Name="Invoice" VerticalAlignment="Bottom">
+            <ContentPresenter.Content>
+                <Button Click="InvoiceView_Clicked">Invoice</Button>
+            </ContentPresenter.Content>
+        </ContentPresenter>
+        
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
@@ -58,15 +81,10 @@
                 <StackPanel Margin="6" Orientation="Horizontal" x:Name="spHeader">
                     <TextBlock Text="Liste des clients" />
                 </StackPanel>
-                <ListView Grid.Row="1" ItemsSource="{Binding Customers}"
+                <ListView Grid.Row="1"
                           SelectedItem="{Binding SelectedCustomer}"
-                          x:Name="lvCustomers">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding Info}"/>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+                          x:Name="lvCustomers"/>
+                
             </Grid>
             <Grid Grid.Column="1" Margin="6">
                 <Grid.RowDefinitions>
@@ -78,7 +96,7 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
-                    
+
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
@@ -129,7 +147,10 @@
                 <DataGrid Grid.Row="7" Grid.Column="7">
                     <TextBlock Text="{Binding Contacts}"/>
                 </DataGrid>
+               
             </Grid>
-        </Grid>        
+            
+            
+        </Grid>
     </DockPanel>
 </Window>

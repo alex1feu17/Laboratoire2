@@ -11,7 +11,7 @@
         MinHeight="600" MinWidth="640"
         DataContext="{Binding RelativeSource={RelativeSource self}}">
     <Window.Resources>
-        <DataTemplate x:Name="CustomerViewTemplate" DataType="{x:Type Vie:CustomerViewModel}">
+        <DataTemplate x:Name="CustomerViewTemplate" DataType="{x:Type viewmodels:CustomerViewModel}">
             <views:UserControlCustomerView DataContext="{Binding}"/>
         </DataTemplate>
         <DataTemplate x:Name="InvoiceViewTemplate" DataType="{x:Type viewmodels:InvoiceViewModel}">
@@ -39,6 +39,10 @@
                     <MenuItem Header="Fonction 1"/>
                     <MenuItem Header="Fonction 2"/>
                     <MenuItem Header="Fonction 3"/>
+                </MenuItem>
+                <MenuItem Header="Enregistrement">
+                    <MenuItem Header="Clients" Click="CustomerView_Clicked"/>
+                    <MenuItem Header="Factures" Click="InvoiceView_Clicked"/>
                 </MenuItem>
             </Menu>
         </StackPanel>
